@@ -893,3 +893,65 @@ Processing by Api::V1::TripsController#index as HTML
 Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/api/v1/trips?search=Cadillac" for ::1 at 2026-03-22 21:41:40 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+Processing by Api::V1::TripsController#index as HTML
+  Parameters: {"search"=>"Cadillac"}
+  [1m[36mTrip Count (9.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" WHERE (name ILIKE '%Cadillac%' OR short_description ILIKE '%Cadillac%' OR long_description ILIKE '%Cadillac%') /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/queries/trips_query.rb:83:in `pagination_metadata'
+  [1m[36mTrip Load (2.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE (name ILIKE '%Cadillac%' OR short_description ILIKE '%Cadillac%' OR long_description ILIKE '%Cadillac%') ORDER BY name asc LIMIT 10 OFFSET 0 /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/controllers/api/v1/trips_controller.rb:9:in `map'
+Completed 200 OK in 104ms (Views: 0.3ms | ActiveRecord: 42.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/trips?search=Grand" for ::1 at 2026-03-22 21:41:47 +0000
+Processing by Api::V1::TripsController#index as HTML
+  Parameters: {"search"=>"Grand"}
+  [1m[36mTrip Count (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" WHERE (name ILIKE '%Grand%' OR short_description ILIKE '%Grand%' OR long_description ILIKE '%Grand%') /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/queries/trips_query.rb:83:in `pagination_metadata'
+  [1m[36mTrip Load (0.7ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE (name ILIKE '%Grand%' OR short_description ILIKE '%Grand%' OR long_description ILIKE '%Grand%') ORDER BY name asc LIMIT 10 OFFSET 0 /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/controllers/api/v1/trips_controller.rb:9:in `map'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 3.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/trips?search=Exe" for ::1 at 2026-03-22 21:41:51 +0000
+Processing by Api::V1::TripsController#index as HTML
+  Parameters: {"search"=>"Exe"}
+  [1m[36mTrip Count (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" WHERE (name ILIKE '%Exe%' OR short_description ILIKE '%Exe%' OR long_description ILIKE '%Exe%') /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/queries/trips_query.rb:83:in `pagination_metadata'
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE (name ILIKE '%Exe%' OR short_description ILIKE '%Exe%' OR long_description ILIKE '%Exe%') ORDER BY name asc LIMIT 10 OFFSET 0 /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/controllers/api/v1/trips_controller.rb:9:in `map'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 2.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/trips?search=desert" for ::1 at 2026-03-22 21:42:12 +0000
+Processing by Api::V1::TripsController#index as HTML
+  Parameters: {"search"=>"desert"}
+  [1m[36mTrip Count (66.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" WHERE (name ILIKE '%desert%' OR short_description ILIKE '%desert%' OR long_description ILIKE '%desert%') /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/queries/trips_query.rb:83:in `pagination_metadata'
+  [1m[36mTrip Load (9.8ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE (name ILIKE '%desert%' OR short_description ILIKE '%desert%' OR long_description ILIKE '%desert%') ORDER BY name asc LIMIT 10 OFFSET 0 /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/controllers/api/v1/trips_controller.rb:9:in `map'
+Completed 200 OK in 119ms (Views: 2.6ms | ActiveRecord: 76.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/trips" for ::1 at 2026-03-22 21:44:30 +0000
+Processing by Api::V1::TripsController#index as HTML
+  [1m[36mTrip Count (228.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/queries/trips_query.rb:83:in `pagination_metadata'
+  [1m[36mTrip Load (5.1ms)[0m  [1m[34mSELECT "trips".* FROM "trips" ORDER BY name asc LIMIT 10 OFFSET 0 /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/controllers/api/v1/trips_controller.rb:9:in `map'
+Completed 200 OK in 322ms (Views: 2.9ms | ActiveRecord: 233.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/trips/999" for ::1 at 2026-03-22 21:44:32 +0000
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"id"=>"999"}
+  [1m[36mTrip Load (20.6ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."id" = 999 LIMIT 1 /*action='show',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/controllers/api/v1/trips_controller.rb:18:in `show'
+Completed 404 Not Found in 375ms (ActiveRecord: 20.6ms (1 query, 0 cached) | GC: 20.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Trip with 'id'="999"):
+  
+app/controllers/api/v1/trips_controller.rb:18:in `show'
