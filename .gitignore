@@ -1,0 +1,10 @@
+.idea/
+log/*.log
+.DS_Store
+doc/
+.yardoc/
+.bundle/
+.ruby-version
+coverage/
+vendor/
+tmp/
