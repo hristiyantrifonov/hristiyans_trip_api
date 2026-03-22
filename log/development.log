@@ -1,0 +1,180 @@
+  [1m[35mSQL (0.4ms)[0m  [1m[35mSET search_path TO public /*application='HristiyansTripApi'*/[0m
+  [1m[35m (874.8ms)[0m  [1m[35mCREATE DATABASE "hristiyans_trip_api_development" ENCODING = 'unicode' /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='HristiyansTripApi'*/[0m
+  [1m[35m (130.1ms)[0m  [1m[35mCREATE DATABASE "hristiyans_trip_api_test" ENCODING = 'unicode' /*application='HristiyansTripApi'*/[0m
+  [1m[35m (2189.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='HristiyansTripApi'*/[0m
+  [1m[35m (159.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='HristiyansTripApi'*/[0m
+  [1m[35m (10.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5145223500710780970) /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (23.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (152.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (213.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-03-22 01:25:19.887818', '2026-03-22 01:25:19.887823') RETURNING "key" /*application='HristiyansTripApi'*/[0m
+Migrating to CreateTrips (20260322012214)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[35m (565.7ms)[0m  [1m[35mCREATE TABLE "trips" ("id" bigserial primary key, "name" character varying, "image_url" character varying, "short_description" character varying, "long_description" text, "rating" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (6.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260322012214') RETURNING "version" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (26.7ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5145223500710780970) /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[35mSET search_path TO public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mSET search_path TO "$user", public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mSET search_path TO public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO "$user", public /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (324.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[35m (54.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5145223500710780970) /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+Reverting CreateTrips (20260322012214)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5145223500710780970) /*application='HristiyansTripApi'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5145223500710780970) /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (274.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='HristiyansTripApi'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5145223500710780970) /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO "$user", public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO "$user", public /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (177.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[35m (50.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5145223500710780970) /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+Reverting CreateTrips (20260322012214)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[35m (1870.0ms)[0m  [1m[35mDROP TABLE "trips" /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (112.9ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20260322012214' /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (615.8ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[35m (34.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5145223500710780970) /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mSET search_path TO public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mSET search_path TO "$user", public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mSET search_path TO public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mSET search_path TO "$user", public /*application='HristiyansTripApi'*/[0m
+  [1m[35m (35.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5145223500710780970) /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (35.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (6.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='HristiyansTripApi'*/[0m
+Migrating to CreateTrips (20260322012214)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[35m (657.7ms)[0m  [1m[35mCREATE TABLE "trips" ("id" bigserial primary key, "name" character varying, "image_url" character varying, "short_description" character varying, "long_description" text, "rating" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='HristiyansTripApi'*/[0m
+  [1m[35m (164.0ms)[0m  [1m[35mALTER TABLE "trips" ADD CONSTRAINT rating_between_1_and_5 CHECK (rating >= 1 AND rating <= 5) /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (81.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260322012214') RETURNING "version" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5145223500710780970) /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mSET search_path TO "$user", public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[35mSET search_path TO public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[35mSET search_path TO "$user", public /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (10.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (160.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (7.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Load (28.8ms)[0m  [1m[34mSELECT "trips".* FROM "trips" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (70.7ms)[0m  [1m[32mINSERT INTO "trips" ("name", "image_url", "short_description", "long_description", "rating", "created_at", "updated_at") VALUES ('Grand Canyon National Park', 'https://images.unsplash.com/photo-1501785888041-af3ef285b470', 'Vast red rock canyon carved by the Colorado River.', 'Stretching 277 miles long and over a mile deep, the Grand Canyon reveals nearly two billion years of Earth''s history through its colorful layers of rock. Visitors can hike, raft, or simply take in the breathtaking views from the rim, watching the light shift across the canyon walls throughout the day.
+', 5, '2026-03-22 17:41:56.141324', '2026-03-22 17:41:56.141324') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (17.4ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (5.2ms)[0m  [1m[32mINSERT INTO "trips" ("name", "image_url", "short_description", "long_description", "rating", "created_at", "updated_at") VALUES ('Carhenge', 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee', 'Stonehenge replica made entirely from vintage cars.', 'Located near Alliance, Nebraska, Carhenge recreates the famous English monument using 38 old automobiles painted gray and arranged in the same proportions as the original. It’s a quirky celebration of both art and Americana that attracts thousands of visitors each year.
+', 4, '2026-03-22 17:41:56.245494', '2026-03-22 17:41:56.245494') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (10.6ms)[0m  [1m[32mINSERT INTO "trips" ("name", "image_url", "short_description", "long_description", "rating", "created_at", "updated_at") VALUES ('Joshua Tree National Park', 'https://images.unsplash.com/photo-1519681393784-d120267933ba', 'Iconic desert park known for its unique Joshua trees.', 'Where the Mojave and Colorado deserts meet, Joshua Tree National Park is a land of rugged rock formations and stark desert beauty. Named for its spiky, twisted trees, the park offers world-class climbing, stargazing, and the kind of silence that’s hard to find anywhere else.
+', 5, '2026-03-22 17:41:56.263217', '2026-03-22 17:41:56.263217') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (1.2ms)[0m  [1m[32mINSERT INTO "trips" ("name", "image_url", "short_description", "long_description", "rating", "created_at", "updated_at") VALUES ('World’s Largest Ball of Twine', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb', 'A roadside legend in Cawker City, Kansas.', 'Started by a single resident in 1953, this enormous ball of sisal twine has been growing ever since, thanks to contributions from locals and travelers alike. It stands as a living monument to small-town pride, oddity, and community spirit.
+', 3, '2026-03-22 17:41:56.280877', '2026-03-22 17:41:56.280877') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (6.8ms)[0m  [1m[32mINSERT INTO "trips" ("name", "image_url", "short_description", "long_description", "rating", "created_at", "updated_at") VALUES ('Mount Rushmore', 'https://images.unsplash.com/photo-1586974772928-9e4d0efcc9ab', 'Famous presidential monument carved into granite.', 'Sculpted into the Black Hills of South Dakota, Mount Rushmore features the faces of Washington, Jefferson, Roosevelt, and Lincoln. The monument took 14 years to complete and stands as a tribute to the nation’s founding, growth, and preservation.
+', 4, '2026-03-22 17:41:56.283996', '2026-03-22 17:41:56.283996') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (2.5ms)[0m  [1m[32mINSERT INTO "trips" ("name", "image_url", "short_description", "long_description", "rating", "created_at", "updated_at") VALUES ('Salvation Mountain', 'https://images.unsplash.com/photo-1570129477492-45c003edd2be', 'A technicolor art installation in the desert.', 'Created by artist Leonard Knight, Salvation Mountain is a massive, hand-built monument proclaiming love and faith through bright paint, adobe, and straw. Its kaleidoscope colors and handmade details make it one of California’s most photographed outsider art sites.
+', 5, '2026-03-22 17:41:56.293322', '2026-03-22 17:41:56.293322') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (1.3ms)[0m  [1m[32mINSERT INTO "trips" ("name", "image_url", "short_description", "long_description", "rating", "created_at", "updated_at") VALUES ('Antelope Canyon', 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29', 'A sandstone slot canyon of swirling colors.', 'Carved by centuries of flash flooding, Antelope Canyon in Arizona is a masterpiece of nature’s sculpting. Light beams filter through narrow openings, illuminating the orange and purple waves of sandstone, creating an otherworldly atmosphere beloved by photographers.
+', 5, '2026-03-22 17:41:56.297905', '2026-03-22 17:41:56.297905') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (1.2ms)[0m  [1m[32mINSERT INTO "trips" ("name", "image_url", "short_description", "long_description", "rating", "created_at", "updated_at") VALUES ('Cadillac Ranch', 'https://images.unsplash.com/photo-1614463161951-c33c6bdb2d58', 'Ten Cadillacs buried nose-first in the Texas desert.', 'A public art installation outside Amarillo, Cadillac Ranch was created in 1974 by a group called Ant Farm. The half-buried cars span the evolution of the Cadillac tailfin, and visitors are encouraged to add their own spray-painted art, keeping the exhibit ever-changing.
+', 4, '2026-03-22 17:41:56.300926', '2026-03-22 17:41:56.300926') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (2.7ms)[0m  [1m[32mINSERT INTO "trips" ("name", "image_url", "short_description", "long_description", "rating", "created_at", "updated_at") VALUES ('Devils Tower', 'https://images.unsplash.com/photo-1536334720751-0e4a3f2b7a0e', 'Towering volcanic monolith in Wyoming.', 'Rising dramatically from the plains of Wyoming, Devils Tower is a striking natural formation revered by Native American tribes and known as the nation’s first national monument. Its fluted columns are a favorite among climbers and photographers alike.
+', 5, '2026-03-22 17:41:56.303748', '2026-03-22 17:41:56.303748') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (1.2ms)[0m  [1m[32mINSERT INTO "trips" ("name", "image_url", "short_description", "long_description", "rating", "created_at", "updated_at") VALUES ('Roswell UFO Museum', 'https://images.unsplash.com/photo-1526498460520-4c246339dccb', 'Dive into UFO lore and alien encounters.', 'The International UFO Museum in Roswell, New Mexico explores the mystery of the alleged 1947 UFO crash. Packed with exhibits, photos, and first-hand accounts, it’s a pilgrimage site for believers, skeptics, and pop-culture enthusiasts alike.
+', 3, '2026-03-22 17:41:56.308081', '2026-03-22 17:41:56.308081') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (1.6ms)[0m  [1m[32mINSERT INTO "trips" ("name", "image_url", "short_description", "long_description", "rating", "created_at", "updated_at") VALUES ('Niagara Falls', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb', 'World-famous waterfalls between the US and Canada.', 'Niagara Falls’ massive cascades send over 3,000 tons of water per second tumbling down its cliffs. Visitors can view the spectacle from both sides of the border, take a boat into the mist, or marvel at nighttime light shows and fireworks.
+', 5, '2026-03-22 17:41:56.310804', '2026-03-22 17:41:56.310804') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (2.7ms)[0m  [1m[32mINSERT INTO "trips" ("name", "image_url", "short_description", "long_description", "rating", "created_at", "updated_at") VALUES ('Bonneville Salt Flats', 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429', 'Utah’s surreal expanse of pure white salt.', 'A remnant of ancient Lake Bonneville, these vast flats stretch for miles and create a mirror-like effect after rain. They serve as a natural racetrack for land speed records and a photographer’s dream for minimalist landscapes.
+', 4, '2026-03-22 17:41:56.314015', '2026-03-22 17:41:56.314015') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (3.8ms)[0m  [1m[32mINSERT INTO "trips" ("name", "image_url", "short_description", "long_description", "rating", "created_at", "updated_at") VALUES ('Crater Lake National Park', 'https://images.unsplash.com/photo-1570129477492-45c003edd2be', 'A deep volcanic lake with brilliant blue water.', 'Formed nearly 8,000 years ago by the collapse of Mount Mazama, Oregon’s Crater Lake is the deepest in the United States. Its pristine waters and steep surrounding cliffs make it one of the most spectacular natural sights in the Pacific Northwest.
+', 5, '2026-03-22 17:41:56.318632', '2026-03-22 17:41:56.318632') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (13.5ms)[0m  [1m[32mINSERT INTO "trips" ("name", "image_url", "short_description", "long_description", "rating", "created_at", "updated_at") VALUES ('Mystery Spot', 'https://images.unsplash.com/photo-1587502537745-84b80b1f3f19', 'Optical illusion attraction in Santa Cruz.', 'Since the 1940s, the Mystery Spot has baffled visitors with tilted rooms and gravity-defying effects. Whether a trick of perspective or something stranger, it remains one of California’s most enduring roadside curiosities.
+', 4, '2026-03-22 17:41:56.324369', '2026-03-22 17:41:56.324369') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (4.6ms)[0m  [1m[32mINSERT INTO "trips" ("name", "image_url", "short_description", "long_description", "rating", "created_at", "updated_at") VALUES ('Sequoia National Park', 'https://images.unsplash.com/photo-1503264116251-35a269479413', 'Home of the world’s largest trees.', 'California’s Sequoia National Park shelters the giant sequoias — ancient trees that can live over 3,000 years and tower more than 250 feet high. The General Sherman Tree, the world’s largest by volume, inspires awe in all who stand beneath it.
+', 5, '2026-03-22 17:41:56.339980', '2026-03-22 17:41:56.339980') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (1.6ms)[0m  [1m[32mINSERT INTO "trips" ("name", "image_url", "short_description", "long_description", "rating", "created_at", "updated_at") VALUES ('South of the Border', 'https://images.unsplash.com/photo-1596484557299-8fc5d9aa66e9', 'Neon roadside landmark along I-95.', 'Straddling the North Carolina–South Carolina line, South of the Border has been luring travelers for decades with its colorful billboards, giant sombrero tower, and kitschy charm. It’s equal parts nostalgic tourist trap and road trip rite of passage.
+', 3, '2026-03-22 17:41:56.346989', '2026-03-22 17:41:56.346989') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (2.4ms)[0m  [1m[32mINSERT INTO "trips" ("name", "image_url", "short_description", "long_description", "rating", "created_at", "updated_at") VALUES ('Bryce Canyon National Park', 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee', 'Maze of crimson spires called hoodoos.', 'Bryce Canyon’s amphitheaters of red and orange rock formations glow vividly at sunrise. Its high-elevation trails weave among whimsical pillars carved by frost and erosion, offering one of the most surreal landscapes in the American West.
+', 5, '2026-03-22 17:41:56.352290', '2026-03-22 17:41:56.352290') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (1.6ms)[0m  [1m[32mINSERT INTO "trips" ("name", "image_url", "short_description", "long_description", "rating", "created_at", "updated_at") VALUES ('Route 66 Museum', 'https://images.unsplash.com/photo-1530789253388-582c481c54b0', 'Celebrating America’s historic highway.', 'Located in Oklahoma, this museum traces the cultural legacy of Route 66 — the ‘Mother Road’ that connected Chicago to Los Angeles. Through vintage cars, neon signs, and personal stories, it captures the romance of mid-century American travel.
+', 4, '2026-03-22 17:41:56.366863', '2026-03-22 17:41:56.366863') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (3.1ms)[0m  [1m[32mINSERT INTO "trips" ("name", "image_url", "short_description", "long_description", "rating", "created_at", "updated_at") VALUES ('Arches National Park', 'https://images.unsplash.com/photo-1501785888041-af3ef285b470', 'Landscape filled with over 2,000 natural arches.', 'Arches National Park, in Utah’s red rock country, is a wonderland of delicate sandstone arches, spires, and fins. Sunrise and sunset turn the formations fiery red, creating unforgettable views and endless opportunities for exploration.
+', 5, '2026-03-22 17:41:56.371106', '2026-03-22 17:41:56.371106') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (1.9ms)[0m  [1m[32mINSERT INTO "trips" ("name", "image_url", "short_description", "long_description", "rating", "created_at", "updated_at") VALUES ('The Wave, Arizona', 'https://images.unsplash.com/photo-1518837695005-2083093ee35b', 'Famous swirling rock formation near the Utah border.', 'Hidden within the Paria Canyon–Vermilion Cliffs Wilderness, The Wave is a geological masterpiece of undulating sandstone. Its surreal patterns and vivid stripes draw photographers from around the world — though only a handful of daily visitors are permitted via lottery.
+', 5, '2026-03-22 17:41:56.376398', '2026-03-22 17:41:56.376398') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5145223500710780970) /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (15.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (13.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='HristiyansTripApi'*/[0m
+Migrating to AddIndexToTripsRating (20260322174319)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[35m (233.6ms)[0m  [1m[35mCREATE INDEX "index_trips_on_rating" ON "trips" ("rating") /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (7.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260322174319') RETURNING "version" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (9.6ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(5145223500710780970) /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO "$user", public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO "$user", public /*application='HristiyansTripApi'*/[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5145223500710780970) /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (7.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (21.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='HristiyansTripApi'*/[0m
+Migrating to AddIndexToTripsImage (20260322174502)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[35m (32.1ms)[0m  [1m[35mCREATE INDEX "index_trips_on_image_url" ON "trips" ("image_url") /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260322174502') RETURNING "version" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5145223500710780970) /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO "$user", public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO "$user", public /*application='HristiyansTripApi'*/[0m
