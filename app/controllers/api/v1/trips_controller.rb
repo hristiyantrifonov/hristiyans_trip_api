@@ -10,6 +10,14 @@ module Api
         }
       end
 
+      def show
+        trip = Trip.find(params[:id])
+
+        render json: {
+          data: TripSerializer.serialize(trip)
+        }
+      end
+
       def create
         trip = Trip.new(trip_params)
 
