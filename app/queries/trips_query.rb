@@ -49,7 +49,6 @@ class TripsQuery
   end
 
   def apply_sort(scope)
-    puts "APPLY SORT #{params.inspect}"
     direction =
       if SORT_DIRECTIONS.include?(params[:order].to_s.downcase)
         params[:order].to_s.downcase
