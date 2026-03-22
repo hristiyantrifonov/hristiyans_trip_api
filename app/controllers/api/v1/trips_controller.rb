@@ -2,12 +2,16 @@ module Api
   module V1
     class TripsController < ApplicationController
       def index
-        result = TripsQuery.new(Trip.all, params).call
+        payload = Rails.cache.fetch(index_page_cache_key, expires_in: 1.minute) do
+          result = TripsQuery.new(Trip.all, params).call
 
-        render json: {
-          data: result[:trips].map { |trip| TripSummarySerializer.serialize(trip) },
-          meta: result[:pagination]
-        }
+          {
+            data: result[:trips].map { |trip| TripSummarySerializer.serialize(trip) },
+            meta: result[:pagination]
+          }
+        end
+
+        render json: payload
       end
 
       def show
@@ -22,6 +26,8 @@ module Api
         trip = Trip.new(trip_params)
 
         if trip.save
+          bump_trips_index_cache
+
           render json: { data: TripDetailSerializer.serialize(trip) }, status: :created
         else
           render json: { error: "Trip fields validation failed", errors: trip.errors.to_hash(true) }, status: :unprocessable_entity
@@ -38,6 +44,28 @@ module Api
           :long_description,
           :rating
         )
+      end
+
+      def index_page_cache_key
+        [
+          "api/v1/trips/index",
+          params[:search].to_s,
+          params[:min_rating].to_s,
+          params[:sort].to_s,
+          params[:order].to_s,
+          params[:page].to_s,
+          params[:per_page].to_s,
+          trips_cache_version
+        ].join(":")
+      end
+
+      def trips_cache_version
+        Rails.cache.fetch("api/v1/trips/cache_version") { 1 }
+      end
+
+      def bump_trips_index_cache
+        new_version = Rails.cache.increment("api/v1/trips/cache_version", 1, initial: 1)
+        Rails.logger.info("[Trips#index] cache version changed to=#{new_version}")
       end
 
     end

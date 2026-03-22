@@ -824,3 +824,72 @@ Processing by Api::V1::TripsController#index as HTML
 Completed 200 OK in 373ms (Views: 3.3ms | ActiveRecord: 239.3ms (2 queries, 0 cached) | GC: 10.2ms)
 
 
+Started GET "/api/v1/trips" for ::1 at 2026-03-22 21:17:09 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (8.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+Processing by Api::V1::TripsController#index as HTML
+[Trips#index] cache miss key=api/v1/trips/index:::::::1
+  [1m[36mTrip Count (134.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/queries/trips_query.rb:83:in `pagination_metadata'
+  [1m[36mTrip Load (7.6ms)[0m  [1m[34mSELECT "trips".* FROM "trips" ORDER BY name asc LIMIT 10 OFFSET 0 /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/controllers/api/v1/trips_controller.rb:17:in `map'
+Completed 200 OK in 266ms (Views: 0.5ms | ActiveRecord: 267.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/trips" for ::1 at 2026-03-22 21:17:18 +0000
+Processing by Api::V1::TripsController#index as HTML
+[Trips#index] cache hit key=api/v1/trips/index:::::::1
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/trips" for ::1 at 2026-03-22 21:17:24 +0000
+Processing by Api::V1::TripsController#index as HTML
+[Trips#index] cache hit key=api/v1/trips/index:::::::1
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/trips" for ::1 at 2026-03-22 21:17:58 +0000
+Processing by Api::V1::TripsController#index as HTML
+[Trips#index] cache hit key=api/v1/trips/index:::::::1
+Completed 200 OK in 8ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/trips" for ::1 at 2026-03-22 21:18:19 +0000
+Processing by Api::V1::TripsController#index as HTML
+[Trips#index] cache miss key=api/v1/trips/index:::::::1
+  [1m[36mTrip Count (49.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/queries/trips_query.rb:83:in `pagination_metadata'
+  [1m[36mTrip Load (7.1ms)[0m  [1m[34mSELECT "trips".* FROM "trips" ORDER BY name asc LIMIT 10 OFFSET 0 /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/controllers/api/v1/trips_controller.rb:17:in `map'
+Completed 200 OK in 158ms (Views: 1.7ms | ActiveRecord: 117.4ms (2 queries, 0 cached) | GC: 2.6ms)
+
+
+Started GET "/api/v1/trips" for ::1 at 2026-03-22 21:18:24 +0000
+Processing by Api::V1::TripsController#index as HTML
+[Trips#index] cache hit key=api/v1/trips/index:::::::1
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/trips" for ::1 at 2026-03-22 21:23:40 +0000
+Processing by Api::V1::TripsController#index as HTML
+  [1m[36mTrip Count (1644.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/queries/trips_query.rb:83:in `pagination_metadata'
+  [1m[36mTrip Load (7.9ms)[0m  [1m[34mSELECT "trips".* FROM "trips" ORDER BY name asc LIMIT 10 OFFSET 0 /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/controllers/api/v1/trips_controller.rb:9:in `map'
+Completed 200 OK in 1695ms (Views: 1.4ms | ActiveRecord: 2268.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/trips" for ::1 at 2026-03-22 21:23:45 +0000
+Processing by Api::V1::TripsController#index as HTML
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/trips" for ::1 at 2026-03-22 21:23:47 +0000
+Processing by Api::V1::TripsController#index as HTML
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/trips" for ::1 at 2026-03-22 21:23:48 +0000
+Processing by Api::V1::TripsController#index as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
