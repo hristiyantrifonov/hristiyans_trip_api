@@ -1,7 +1,11 @@
 class TripsQuery
+  SORT_DIRECTIONS = %w[asc desc].freeze
+
+  DEFAULT_SORT_ORDER = "asc"
+  DEFAULT_DEFAULT_SORT = "name"
   DEFAULT_PAGE = 1
-  DEFAULT_PER_PAGE = 5
-  MAX_PER_PAGE = 21
+  DEFAULT_PER_PAGE = 10
+  MAX_PER_PAGE = 20
 
   def initialize(scope = Trip.all, params = {})
     @scope = scope
@@ -12,6 +16,7 @@ class TripsQuery
     results = @scope
     results = apply_search(results)
     results = apply_min_rating_filter(results)
+    results = apply_sort(results)
 
     {
       trips: apply_pagination(results),
@@ -41,6 +46,22 @@ class TripsQuery
     return scope.none unless min_rating.between?(1, 5)
 
     scope.where("rating >= ?", min_rating)
+  end
+
+  def apply_sort(scope)
+    puts "APPLY SORT #{params.inspect}"
+    direction =
+      if SORT_DIRECTIONS.include?(params[:order].to_s.downcase)
+        params[:order].to_s.downcase
+      else
+        DEFAULT_SORT_ORDER
+      end
+
+    if params[:sort] == "rating"
+      scope.order(Arel.sql("rating #{direction}, name asc"))
+    else
+      scope.order(Arel.sql("name asc"))
+    end
   end
 
   def apply_pagination(scope)

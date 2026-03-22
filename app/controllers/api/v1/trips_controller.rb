@@ -6,7 +6,7 @@ module Api
 
         render json: {
           data: result[:trips].map { |trip| TripSerializer.serialize(trip) },
-          info: result[:pagination]
+          meta: result[:pagination]
         }
       end
     end
