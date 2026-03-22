@@ -5,7 +5,7 @@ module Api
         result = TripsQuery.new(Trip.all, params).call
 
         render json: {
-          data: result[:trips].map { |trip| TripSerializer.serialize(trip) },
+          data: result[:trips].map { |trip| TripSummarySerializer.serialize(trip) },
           meta: result[:pagination]
         }
       end
@@ -14,7 +14,7 @@ module Api
         trip = Trip.find(params[:id])
 
         render json: {
-          data: TripSerializer.serialize(trip)
+          data: TripDetailSerializer.serialize(trip)
         }
       end
 
@@ -22,7 +22,7 @@ module Api
         trip = Trip.new(trip_params)
 
         if trip.save
-          render json: { data: TripSerializer.serialize(trip) }, status: :created
+          render json: { data: TripDetailSerializer.serialize(trip) }, status: :created
         else
           render json: { error: "Trip fields validation failed", errors: trip.errors.to_hash(true) }, status: :unprocessable_entity
         end

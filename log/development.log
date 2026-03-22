@@ -777,3 +777,50 @@ Processing by Api::V1::TripsController#show as HTML
 Completed 200 OK in 35ms (Views: 0.2ms | ActiveRecord: 17.1ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/api/v1/trips/14" for ::1 at 2026-03-22 21:01:17 +0000
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (1846.1ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."id" = 14 LIMIT 1 /*action='show',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/controllers/api/v1/trips_controller.rb:14:in `show'
+Completed 200 OK in 1906ms (Views: 4.2ms | ActiveRecord: 2244.1ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/api/v1/trips" for ::1 at 2026-03-22 21:01:25 +0000
+Processing by Api::V1::TripsController#index as HTML
+  [1m[36mTrip Count (807.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/queries/trips_query.rb:83:in `pagination_metadata'
+  [1m[36mTrip Load (20.7ms)[0m  [1m[34mSELECT "trips".* FROM "trips" ORDER BY name asc LIMIT 10 OFFSET 0 /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/controllers/api/v1/trips_controller.rb:8:in `map'
+Completed 200 OK in 849ms (Views: 1.1ms | ActiveRecord: 828.1ms (2 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/api/v1/trips?page=3" for ::1 at 2026-03-22 21:01:35 +0000
+Processing by Api::V1::TripsController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36mTrip Count (33.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/queries/trips_query.rb:83:in `pagination_metadata'
+  [1m[36mTrip Load (31.9ms)[0m  [1m[34mSELECT "trips".* FROM "trips" ORDER BY name asc LIMIT 10 OFFSET 20 /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/controllers/api/v1/trips_controller.rb:8:in `map'
+Completed 200 OK in 80ms (Views: 1.2ms | ActiveRecord: 64.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/trips?page=3&min_rating=5" for ::1 at 2026-03-22 21:01:48 +0000
+Processing by Api::V1::TripsController#index as HTML
+  Parameters: {"page"=>"3", "min_rating"=>"5"}
+  [1m[36mTrip Count (1274.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" WHERE (rating >= 5) /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/queries/trips_query.rb:83:in `pagination_metadata'
+  [1m[36mTrip Load (182.9ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE (rating >= 5) ORDER BY name asc LIMIT 10 OFFSET 20 /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/controllers/api/v1/trips_controller.rb:8:in `map'
+Completed 200 OK in 1552ms (Views: 12.7ms | ActiveRecord: 1456.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/trips?page=1&min_rating=5" for ::1 at 2026-03-22 21:01:53 +0000
+Processing by Api::V1::TripsController#index as HTML
+  Parameters: {"page"=>"1", "min_rating"=>"5"}
+  [1m[36mTrip Count (183.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" WHERE (rating >= 5) /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/queries/trips_query.rb:83:in `pagination_metadata'
+  [1m[36mTrip Load (56.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE (rating >= 5) ORDER BY name asc LIMIT 10 OFFSET 0 /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/controllers/api/v1/trips_controller.rb:8:in `map'
+Completed 200 OK in 373ms (Views: 3.3ms | ActiveRecord: 239.3ms (2 queries, 0 cached) | GC: 10.2ms)
+
+
