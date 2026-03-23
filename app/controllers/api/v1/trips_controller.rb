@@ -27,6 +27,7 @@ module Api
 
         if trip.save
           bump_trips_index_cache
+          Trips::CalculateAverageRatingJob.perform_later
 
           render json: { data: TripDetailSerializer.serialize(trip) }, status: :created
         else
