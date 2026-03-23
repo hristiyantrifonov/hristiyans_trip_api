@@ -1181,3 +1181,58 @@ Started GET "/favicon.ico" for 192.168.65.1 at 2026-03-23 09:17:16 +0000
   
 ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
   
+SolidQueue-1.4.0 Error registering Supervisor(fork) (319.3ms)  pid: 1235, hostname: "Hristiyans-MacBook-Air.local", name: "supervisor(fork)-febae22feb8d99dbd47e", error: "ActiveRecord::StatementInvalid PG::UndefinedTable: ERROR:  relation \"solid_queue_processes\" does not exist\nLINE 10:  WHERE a.attrelid = '\"solid_queue_processes\"'::regclass\n                             ^\n"
+SolidQueue-1.4.0 Started Supervisor(fork) (330.1ms)  pid: 1235, hostname: "Hristiyans-MacBook-Air.local", process_id: nil, name: "supervisor(fork)-febae22feb8d99dbd47e"
+Started GET "/api/v1/trips" for ::1 at 2026-03-23 09:35:39 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (9.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+Processing by Api::V1::TripsController#index as HTML
+  [1m[36mTrip Count (465.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/queries/trips_query.rb:83:in `pagination_metadata'
+  [1m[36mTrip Load (25.7ms)[0m  [1m[34mSELECT "trips".* FROM "trips" ORDER BY name asc LIMIT 10 OFFSET 0 /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/controllers/api/v1/trips_controller.rb:9:in `map'
+Completed 200 OK in 566ms (Views: 0.7ms | ActiveRecord: 537.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+SolidQueue-1.4.0 Error registering Supervisor(fork) (259.9ms)  pid: 1262, hostname: "Hristiyans-MacBook-Air.local", name: "supervisor(fork)-3adf228bf159318734fd", error: "ActiveRecord::StatementInvalid PG::UndefinedTable: ERROR:  relation \"solid_queue_processes\" does not exist\nLINE 10:  WHERE a.attrelid = '\"solid_queue_processes\"'::regclass\n                             ^\n"
+SolidQueue-1.4.0 Started Supervisor(fork) (267.5ms)  pid: 1262, hostname: "Hristiyans-MacBook-Air.local", process_id: nil, name: "supervisor(fork)-3adf228bf159318734fd"
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5145223500710780970) /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='HristiyansTripApi'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5145223500710780970) /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO "$user", public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO "$user", public /*application='HristiyansTripApi'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5145223500710780970) /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='HristiyansTripApi'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5145223500710780970) /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO "$user", public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='HristiyansTripApi'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO "$user", public /*application='HristiyansTripApi'*/[0m
+SolidQueue-1.4.0 Error registering Supervisor(fork) (54.1ms)  pid: 1289, hostname: "Hristiyans-MacBook-Air.local", name: "supervisor(fork)-c3f3f5c583a620a4bffe", error: "ActiveRecord::StatementInvalid PG::UndefinedTable: ERROR:  relation \"solid_queue_processes\" does not exist\nLINE 10:  WHERE a.attrelid = '\"solid_queue_processes\"'::regclass\n                             ^\n"
+SolidQueue-1.4.0 Started Supervisor(fork) (59.6ms)  pid: 1289, hostname: "Hristiyans-MacBook-Air.local", process_id: nil, name: "supervisor(fork)-c3f3f5c583a620a4bffe"
+  [1m[36mActiveRecord::SchemaMigration Load (3.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+Started GET "/api/v1/trips" for ::1 at 2026-03-23 09:50:38 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (7.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+Processing by Api::V1::TripsController#index as HTML
+  [1m[36mTrip Count (240.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/queries/trips_query.rb:83:in `pagination_metadata'
+  [1m[36mTrip Load (7.9ms)[0m  [1m[34mSELECT "trips".* FROM "trips" ORDER BY name asc LIMIT 10 OFFSET 0 /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/controllers/api/v1/trips_controller.rb:9:in `map'
+[ActiveJob] Enqueued Trips::CalculateAverageRatingJob (Job ID: c040bf43-74fb-4ffb-b001-af9ef696f0b3) to Async(default)
+[ActiveJob] ↳ app/controllers/api/v1/trips_controller.rb:13:in `block in index'
+Completed 200 OK in 339ms (Views: 0.4ms | ActiveRecord: 287.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+[ActiveJob] [Trips::CalculateAverageRatingJob] [c040bf43-74fb-4ffb-b001-af9ef696f0b3] Performing Trips::CalculateAverageRatingJob (Job ID: c040bf43-74fb-4ffb-b001-af9ef696f0b3) from Async(default) enqueued at 2026-03-23T09:50:38.587627000Z
+[ActiveJob] [Trips::CalculateAverageRatingJob] [c040bf43-74fb-4ffb-b001-af9ef696f0b3]   [1m[36mTrip Average (769.9ms)[0m  [1m[34mSELECT AVG("trips"."rating") FROM "trips" /*application='HristiyansTripApi',job='Trips%3A%3ACalculateAverageRatingJob'*/[0m
+[ActiveJob] [Trips::CalculateAverageRatingJob] [c040bf43-74fb-4ffb-b001-af9ef696f0b3]   ↳ app/jobs/trips/calculate_average_rating_job.rb:5:in `perform'
+[ActiveJob] [Trips::CalculateAverageRatingJob] [c040bf43-74fb-4ffb-b001-af9ef696f0b3]   [1m[36mTrip Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" /*application='HristiyansTripApi',job='Trips%3A%3ACalculateAverageRatingJob'*/[0m
+[ActiveJob] [Trips::CalculateAverageRatingJob] [c040bf43-74fb-4ffb-b001-af9ef696f0b3]   ↳ app/jobs/trips/calculate_average_rating_job.rb:6:in `perform'
+[ActiveJob] [Trips::CalculateAverageRatingJob] [c040bf43-74fb-4ffb-b001-af9ef696f0b3] [CalculateAverageRatingJob] Current average rating is 4.45 across 22 trips.
+[ActiveJob] [Trips::CalculateAverageRatingJob] [c040bf43-74fb-4ffb-b001-af9ef696f0b3] Performed Trips::CalculateAverageRatingJob (Job ID: c040bf43-74fb-4ffb-b001-af9ef696f0b3) from Async(default) in 1448.98ms
