@@ -1236,3 +1236,175 @@ Completed 200 OK in 339ms (Views: 0.4ms | ActiveRecord: 287.2ms (2 queries, 0 ca
 [ActiveJob] [Trips::CalculateAverageRatingJob] [c040bf43-74fb-4ffb-b001-af9ef696f0b3]   ↳ app/jobs/trips/calculate_average_rating_job.rb:6:in `perform'
 [ActiveJob] [Trips::CalculateAverageRatingJob] [c040bf43-74fb-4ffb-b001-af9ef696f0b3] [CalculateAverageRatingJob] Current average rating is 4.45 across 22 trips.
 [ActiveJob] [Trips::CalculateAverageRatingJob] [c040bf43-74fb-4ffb-b001-af9ef696f0b3] Performed Trips::CalculateAverageRatingJob (Job ID: c040bf43-74fb-4ffb-b001-af9ef696f0b3) from Async(default) in 1448.98ms
+  [1m[36mActiveRecord::SchemaMigration Load (5.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+Started GET "/api/v1/trips" for 192.168.65.1 at 2026-03-23 10:51:15 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+Processing by Api::V1::TripsController#index as HTML
+  [1m[36mTrip Count (72.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/queries/trips_query.rb:83:in `pagination_metadata'
+  [1m[36mTrip Load (1.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips" ORDER BY name asc LIMIT 10 OFFSET 0 /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/controllers/api/v1/trips_controller.rb:9:in `map'
+Completed 200 OK in 179ms (Views: 1.1ms | ActiveRecord: 126.5ms (2 queries, 0 cached) | GC: 22.4ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (9.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Load (5.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Destroy (8.9ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = 1 /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Destroy (1.0ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = 2 /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Destroy (1.1ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = 3 /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Destroy (0.8ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = 4 /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Destroy (0.8ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = 5 /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Destroy (1.3ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = 6 /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Destroy (2.0ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = 7 /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Destroy (0.6ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = 8 /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Destroy (1.1ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = 9 /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Destroy (0.7ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = 10 /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Destroy (2.1ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = 11 /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Destroy (0.6ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = 12 /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Destroy (0.6ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = 13 /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Destroy (0.6ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = 14 /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Destroy (1.5ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = 15 /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Destroy (3.5ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = 16 /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Destroy (0.7ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = 17 /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Destroy (0.8ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = 18 /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Destroy (0.7ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = 19 /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Destroy (0.6ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = 20 /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (6.3ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "image_url", "long_description", "name", "rating", "short_description", "updated_at") VALUES ('2026-03-23 11:25:00.602163', 'https://images.unsplash.com/photo-1501785888041-af3ef285b470', 'Stretching 277 miles long and over a mile deep, the Grand Canyon reveals nearly two billion years of Earth''s history through its colorful layers of rock. Visitors can hike, raft, or simply take in the breathtaking views from the rim, watching the light shift across the canyon walls throughout the day.
+', 'Grand Canyon National Park', 5, 'Vast red rock canyon carved by the Colorado River.', '2026-03-23 11:25:00.602163') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (1.5ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "image_url", "long_description", "name", "rating", "short_description", "updated_at") VALUES ('2026-03-23 11:25:00.610765', 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee', 'Located near Alliance, Nebraska, Carhenge recreates the famous English monument using 38 old automobiles painted gray and arranged in the same proportions as the original. It’s a quirky celebration of both art and Americana that attracts thousands of visitors each year.
+', 'Carhenge', 4, 'Stonehenge replica made entirely from vintage cars.', '2026-03-23 11:25:00.610765') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (1.2ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "image_url", "long_description", "name", "rating", "short_description", "updated_at") VALUES ('2026-03-23 11:25:00.614533', 'https://images.unsplash.com/photo-1519681393784-d120267933ba', 'Where the Mojave and Colorado deserts meet, Joshua Tree National Park is a land of rugged rock formations and stark desert beauty. Named for its spiky, twisted trees, the park offers world-class climbing, stargazing, and the kind of silence that’s hard to find anywhere else.
+', 'Joshua Tree National Park', 5, 'Iconic desert park known for its unique Joshua trees.', '2026-03-23 11:25:00.614533') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (0.7ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "image_url", "long_description", "name", "rating", "short_description", "updated_at") VALUES ('2026-03-23 11:25:00.617148', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb', 'Started by a single resident in 1953, this enormous ball of sisal twine has been growing ever since, thanks to contributions from locals and travelers alike. It stands as a living monument to small-town pride, oddity, and community spirit.
+', 'World’s Largest Ball of Twine', 3, 'A roadside legend in Cawker City, Kansas.', '2026-03-23 11:25:00.617148') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (0.7ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "image_url", "long_description", "name", "rating", "short_description", "updated_at") VALUES ('2026-03-23 11:25:00.619193', 'https://images.unsplash.com/photo-1586974772928-9e4d0efcc9ab', 'Sculpted into the Black Hills of South Dakota, Mount Rushmore features the faces of Washington, Jefferson, Roosevelt, and Lincoln. The monument took 14 years to complete and stands as a tribute to the nation’s founding, growth, and preservation.
+', 'Mount Rushmore', 4, 'Famous presidential monument carved into granite.', '2026-03-23 11:25:00.619193') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (1.1ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "image_url", "long_description", "name", "rating", "short_description", "updated_at") VALUES ('2026-03-23 11:25:00.621132', 'https://images.unsplash.com/photo-1570129477492-45c003edd2be', 'Created by artist Leonard Knight, Salvation Mountain is a massive, hand-built monument proclaiming love and faith through bright paint, adobe, and straw. Its kaleidoscope colors and handmade details make it one of California’s most photographed outsider art sites.
+', 'Salvation Mountain', 5, 'A technicolor art installation in the desert.', '2026-03-23 11:25:00.621132') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (0.7ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "image_url", "long_description", "name", "rating", "short_description", "updated_at") VALUES ('2026-03-23 11:25:00.623525', 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29', 'Carved by centuries of flash flooding, Antelope Canyon in Arizona is a masterpiece of nature’s sculpting. Light beams filter through narrow openings, illuminating the orange and purple waves of sandstone, creating an otherworldly atmosphere beloved by photographers.
+', 'Antelope Canyon', 5, 'A sandstone slot canyon of swirling colors.', '2026-03-23 11:25:00.623525') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (0.6ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "image_url", "long_description", "name", "rating", "short_description", "updated_at") VALUES ('2026-03-23 11:25:00.625730', 'https://images.unsplash.com/photo-1614463161951-c33c6bdb2d58', 'A public art installation outside Amarillo, Cadillac Ranch was created in 1974 by a group called Ant Farm. The half-buried cars span the evolution of the Cadillac tailfin, and visitors are encouraged to add their own spray-painted art, keeping the exhibit ever-changing.
+', 'Cadillac Ranch', 4, 'Ten Cadillacs buried nose-first in the Texas desert.', '2026-03-23 11:25:00.625730') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (0.6ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "image_url", "long_description", "name", "rating", "short_description", "updated_at") VALUES ('2026-03-23 11:25:00.627702', 'https://images.unsplash.com/photo-1536334720751-0e4a3f2b7a0e', 'Rising dramatically from the plains of Wyoming, Devils Tower is a striking natural formation revered by Native American tribes and known as the nation’s first national monument. Its fluted columns are a favorite among climbers and photographers alike.
+', 'Devils Tower', 5, 'Towering volcanic monolith in Wyoming.', '2026-03-23 11:25:00.627702') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (0.6ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "image_url", "long_description", "name", "rating", "short_description", "updated_at") VALUES ('2026-03-23 11:25:00.629605', 'https://images.unsplash.com/photo-1526498460520-4c246339dccb', 'The International UFO Museum in Roswell, New Mexico explores the mystery of the alleged 1947 UFO crash. Packed with exhibits, photos, and first-hand accounts, it’s a pilgrimage site for believers, skeptics, and pop-culture enthusiasts alike.
+', 'Roswell UFO Museum', 3, 'Dive into UFO lore and alien encounters.', '2026-03-23 11:25:00.629605') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (0.7ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "image_url", "long_description", "name", "rating", "short_description", "updated_at") VALUES ('2026-03-23 11:25:00.631499', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb', 'Niagara Falls’ massive cascades send over 3,000 tons of water per second tumbling down its cliffs. Visitors can view the spectacle from both sides of the border, take a boat into the mist, or marvel at nighttime light shows and fireworks.
+', 'Niagara Falls', 5, 'World-famous waterfalls between the US and Canada.', '2026-03-23 11:25:00.631499') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (1.1ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "image_url", "long_description", "name", "rating", "short_description", "updated_at") VALUES ('2026-03-23 11:25:00.639070', 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429', 'A remnant of ancient Lake Bonneville, these vast flats stretch for miles and create a mirror-like effect after rain. They serve as a natural racetrack for land speed records and a photographer’s dream for minimalist landscapes.
+', 'Bonneville Salt Flats', 4, 'Utah’s surreal expanse of pure white salt.', '2026-03-23 11:25:00.639070') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (0.7ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "image_url", "long_description", "name", "rating", "short_description", "updated_at") VALUES ('2026-03-23 11:25:00.641771', 'https://images.unsplash.com/photo-1570129477492-45c003edd2be', 'Formed nearly 8,000 years ago by the collapse of Mount Mazama, Oregon’s Crater Lake is the deepest in the United States. Its pristine waters and steep surrounding cliffs make it one of the most spectacular natural sights in the Pacific Northwest.
+', 'Crater Lake National Park', 5, 'A deep volcanic lake with brilliant blue water.', '2026-03-23 11:25:00.641771') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (1.5ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "image_url", "long_description", "name", "rating", "short_description", "updated_at") VALUES ('2026-03-23 11:25:00.643907', 'https://images.unsplash.com/photo-1587502537745-84b80b1f3f19', 'Since the 1940s, the Mystery Spot has baffled visitors with tilted rooms and gravity-defying effects. Whether a trick of perspective or something stranger, it remains one of California’s most enduring roadside curiosities.
+', 'Mystery Spot', 4, 'Optical illusion attraction in Santa Cruz.', '2026-03-23 11:25:00.643907') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (0.8ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "image_url", "long_description", "name", "rating", "short_description", "updated_at") VALUES ('2026-03-23 11:25:00.647228', 'https://images.unsplash.com/photo-1503264116251-35a269479413', 'California’s Sequoia National Park shelters the giant sequoias — ancient trees that can live over 3,000 years and tower more than 250 feet high. The General Sherman Tree, the world’s largest by volume, inspires awe in all who stand beneath it.
+', 'Sequoia National Park', 5, 'Home of the world’s largest trees.', '2026-03-23 11:25:00.647228') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (0.7ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "image_url", "long_description", "name", "rating", "short_description", "updated_at") VALUES ('2026-03-23 11:25:00.649594', 'https://images.unsplash.com/photo-1596484557299-8fc5d9aa66e9', 'Straddling the North Carolina–South Carolina line, South of the Border has been luring travelers for decades with its colorful billboards, giant sombrero tower, and kitschy charm. It’s equal parts nostalgic tourist trap and road trip rite of passage.
+', 'South of the Border', 3, 'Neon roadside landmark along I-95.', '2026-03-23 11:25:00.649594') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (1.5ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "image_url", "long_description", "name", "rating", "short_description", "updated_at") VALUES ('2026-03-23 11:25:00.652292', 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee', 'Bryce Canyon’s amphitheaters of red and orange rock formations glow vividly at sunrise. Its high-elevation trails weave among whimsical pillars carved by frost and erosion, offering one of the most surreal landscapes in the American West.
+', 'Bryce Canyon National Park', 5, 'Maze of crimson spires called hoodoos.', '2026-03-23 11:25:00.652292') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (0.9ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "image_url", "long_description", "name", "rating", "short_description", "updated_at") VALUES ('2026-03-23 11:25:00.655804', 'https://images.unsplash.com/photo-1530789253388-582c481c54b0', 'Located in Oklahoma, this museum traces the cultural legacy of Route 66 — the ‘Mother Road’ that connected Chicago to Los Angeles. Through vintage cars, neon signs, and personal stories, it captures the romance of mid-century American travel.
+', 'Route 66 Museum', 4, 'Celebrating America’s historic highway.', '2026-03-23 11:25:00.655804') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (0.9ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "image_url", "long_description", "name", "rating", "short_description", "updated_at") VALUES ('2026-03-23 11:25:00.658810', 'https://images.unsplash.com/photo-1501785888041-af3ef285b470', 'Arches National Park, in Utah’s red rock country, is a wonderland of delicate sandstone arches, spires, and fins. Sunrise and sunset turn the formations fiery red, creating unforgettable views and endless opportunities for exploration.
+', 'Arches National Park', 5, 'Landscape filled with over 2,000 natural arches.', '2026-03-23 11:25:00.658810') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='HristiyansTripApi'*/[0m
+  [1m[36mTrip Create (0.7ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "image_url", "long_description", "name", "rating", "short_description", "updated_at") VALUES ('2026-03-23 11:25:00.661344', 'https://images.unsplash.com/photo-1518837695005-2083093ee35b', 'Hidden within the Paria Canyon–Vermilion Cliffs Wilderness, The Wave is a geological masterpiece of undulating sandstone. Its surreal patterns and vivid stripes draw photographers from around the world — though only a handful of daily visitors are permitted via lottery.
+', 'The Wave, Arizona', 5, 'Famous swirling rock formation near the Utah border.', '2026-03-23 11:25:00.661344') RETURNING "id" /*application='HristiyansTripApi'*/[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT /*application='HristiyansTripApi'*/[0m
+Started GET "/trips" for 192.168.65.1 at 2026-03-23 11:25:03 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='HristiyansTripApi'*/[0m
+  
+ActionController::RoutingError (No route matches [GET] "/trips"):
+  
+Started GET "/favicon.ico" for 192.168.65.1 at 2026-03-23 11:25:04 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/api/v1/trips" for 192.168.65.1 at 2026-03-23 11:25:14 +0000
+Processing by Api::V1::TripsController#index as HTML
+  [1m[36mTrip Count (133.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/queries/trips_query.rb:83:in `pagination_metadata'
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips" ORDER BY name asc LIMIT 10 OFFSET 0 /*action='index',application='HristiyansTripApi',controller='trips'*/[0m
+  ↳ app/controllers/api/v1/trips_controller.rb:9:in `map'
+Completed 200 OK in 333ms (Views: 0.3ms | ActiveRecord: 170.5ms (2 queries, 0 cached) | GC: 51.8ms)
+
+
