@@ -28,7 +28,7 @@ services:
     volumes:
       - .:/rails
       - bundle_cache:/usr/local/bundle
-    command: bash -lc "bundle install && bin/rails db:prepare && bin/rails server -b 0.0.0.0 -p 3000"
+    command: bash -lc "bundle install && bin/rails db:prepare && bin/rails db:seed && bin/rails server -b 0.0.0.0 -p 3000"
 
 volumes:
   postgres_data:
